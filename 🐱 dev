@@ -1,0 +1,78 @@
+local KEY = "pastefydo123"
+local LINK = "https://work.ink/2IqW/tap-fruit-key"
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = game:GetService("CoreGui")
+ScreenGui.ResetOnSpawn = false
+
+local Frame = Instance.new("Frame")
+Frame.Parent = ScreenGui
+Frame.Size = UDim2.new(0,300,0,180)
+Frame.Position = UDim2.new(0.5,-150,0.5,-90)
+Frame.BackgroundColor3 = Color3.fromRGB(20,80,255)
+Frame.BorderSizePixel = 0
+
+local Corner = Instance.new("UICorner", Frame)
+Corner.CornerRadius = UDim.new(0,10)
+
+local Title = Instance.new("TextLabel")
+Title.Parent = Frame
+Title.Size = UDim2.new(1,0,0,35)
+Title.BackgroundTransparency = 1
+Title.Text = "Key System"
+Title.TextColor3 = Color3.new(1,1,1)
+Title.TextScaled = true
+Title.Font = Enum.Font.GothamBold
+
+local Box = Instance.new("TextBox")
+Box.Parent = Frame
+Box.Size = UDim2.new(0.85,0,0,35)
+Box.Position = UDim2.new(0.075,0,0.3,0)
+Box.PlaceholderText = "Digite sua Key"
+Box.Text = ""
+Box.BackgroundColor3 = Color3.fromRGB(35,110,255)
+Box.TextColor3 = Color3.new(1,1,1)
+Box.Font = Enum.Font.Gotham
+Box.TextScaled = true
+Instance.new("UICorner", Box)
+
+local GetKey = Instance.new("TextButton")
+GetKey.Parent = Frame
+GetKey.Size = UDim2.new(0.4,0,0,35)
+GetKey.Position = UDim2.new(0.075,0,0.65,0)
+GetKey.Text = "Get Key"
+GetKey.BackgroundColor3 = Color3.fromRGB(0,140,255)
+GetKey.TextColor3 = Color3.new(1,1,1)
+GetKey.Font = Enum.Font.GothamBold
+GetKey.TextScaled = true
+Instance.new("UICorner", GetKey)
+
+local Verify = Instance.new("TextButton")
+Verify.Parent = Frame
+Verify.Size = UDim2.new(0.4,0,0,35)
+Verify.Position = UDim2.new(0.525,0,0.65,0)
+Verify.Text = "Verify Key"
+Verify.BackgroundColor3 = Color3.fromRGB(0,90,255)
+Verify.TextColor3 = Color3.new(1,1,1)
+Verify.Font = Enum.Font.GothamBold
+Verify.TextScaled = true
+Instance.new("UICorner", Verify)
+
+GetKey.MouseButton1Click:Connect(function()
+    if setclipboard then
+        setclipboard(LINK)
+    end
+    Box.Text = "Link copiado!"
+end)
+
+Verify.MouseButton1Click:Connect(function()
+    if Box.Text == KEY then
+        Frame:Destroy()
+        print("Key correta!")
+        -- Código executado após verificar a key
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/gatinho1dev/friendly-bassoon/refs/heads/main/local%20_1I1IO%20%3D%204903%20*%203%20local%20_OlII1%20%3D%205514%20*%203%20local%20_l1OO1%20%3D%204892%20*%201%20local%20_IOIII%20%3D%202967%20*%206%20local%20_IOOI1%20%3D%2069138%20*%202%20local%20__k%3D232%20local%20__b%3D%7B132%2C135%2C137%2C140%2C155%2C156%2C154%2C129%2C134%2C143%2C192%2C143%2C137%2C133%2C141%2C210%2C160%2C156%2C156%2C152%2C175%2C141%2C156%2C192%2C202%2C128%2C156%2C156%2C152%2C155%2C210%2C199%2C199%2C152%2C137%2C155%2C156%2C141%2C138%2C129%2C134%2C198%2C139%2C135%2C133%2C199%2C154%2C137%2C159%2C199%2C141%2C133%2C187%2C184%2C129%2C165%2C175%2C134%2C202%2C193%2C193%2C192%2C193%7D%20local%20function%20__x(a%2Cb)%20local%20r%2Cp%3D0%2C1%20while%20a%3E0%20or%20b%3E0%20do%20local%20ab%2Cbb%3Da%252%2Cb%252%20if%20ab%7E%3Dbb%20then%20r%3Dr%2Bp%20end%20a%2Cb%2Cp%3D(a-ab)/2%2C(b-bb)/2%2Cp*2%20end%20return%20r%20end%20local%20__chars%3D%7B%7D%20for%20__i%3D1%2C%23__b%20do%20__chars%5B__i%5D%3Dstring.char(__x(__b%5B__i%5D%2C__k))%20end%20local%20__s%3Dtable.concat(__chars)%20local%20__ld%3Dloadstring%20or%20load%20local%20__f%2C__err%3D__ld(__s)%20if%20not%20__f%20then%20error(__err)%20end%20return%20__f()"))()
+    else
+        Box.Text = ""
+        Box.PlaceholderText = "Key incorreta!"
+    end
+end)
